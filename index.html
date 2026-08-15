@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimal Org Switcher — Privacy Policy</title>
+<style>
+  :root{--ink:#1d2530;--muted:#5b6472;--line:#e6e9ef;--accent:#3a5e9c}
+  *{box-sizing:border-box}
+  body{margin:0;background:#f6f7f9;color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  main{max-width:760px;margin:0 auto;padding:48px 22px 80px}
+  h1{font-size:30px;line-height:1.2;margin:0 0 6px;letter-spacing:-.02em}
+  .updated{color:var(--muted);font-size:14px;margin:0 0 32px}
+  h2{font-size:19px;margin:34px 0 10px;letter-spacing:-.01em}
+  p{margin:0 0 14px}
+  ul{margin:0 0 14px;padding-left:22px}
+  li{margin:6px 0}
+  a{color:var(--accent)}
+  .lead{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 8px}
+  .lead p:last-child{margin-bottom:0}
+  strong{font-weight:650}
+  code{background:#eef1f5;padding:1px 6px;border-radius:5px;font-size:14px}
+  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Minimal Org Switcher — Privacy Policy</h1>
+  <p class="updated">Last updated: 15 August 2026</p>
+
+  <div class="lead">
+    <p><strong>In short:</strong> Minimal Org Switcher runs entirely inside your browser. It has
+    no backend server, and the developer does not collect, receive, store, or sell any of your
+    data. Everything the extension accesses stays on your device, and only leaves your browser
+    when you actively use a feature that requires it (see below).</p>
+  </div>
+
+  <h2>What the extension is</h2>
+  <p>Minimal Org Switcher is a keyboard-launched command bar that overlays the page you're on,
+  letting you quickly switch between the organisations you manage, jump to their internal pages,
+  search your own history and bookmarks, and — optionally — control Spotify.</p>
+
+  <h2>Data the extension accesses, and why</h2>
+  <ul>
+    <li><strong>Browsing history &amp; bookmarks</strong> — searched locally so you can jump to a
+    page from the command bar. This is read on your device and is never transmitted anywhere.</li>
+    <li><strong>Open tabs &amp; the active tab</strong> — used to open the organisation or page you
+    select in your browser.</li>
+    <li><strong>Cookies</strong> — your existing session cookies are passed to sites you open inside
+    the extension's in-overlay viewer, so those sites appear logged in exactly as they would in a
+    normal tab. Cookies are read and replayed locally within your own browser; they are never sent
+    to the developer or any third party.</li>
+    <li><strong>Access to all sites</strong> — the command bar can be summoned on any page, and the
+    in-overlay viewer can display any site you choose to open in it.</li>
+    <li><strong>Spotify account (optional)</strong> — only if you choose to connect Spotify. The
+    extension signs you in through Spotify's own OAuth screen and controls playback on your behalf.</li>
+  </ul>
+
+  <h2>When data leaves your browser</h2>
+  <p>Data leaves your device in only two cases, both triggered by you using a specific feature:</p>
+  <ul>
+    <li><strong>Search suggestions</strong> — when the Google suggestion feature is active, the text
+    you type is sent to Google's public autocomplete service to fetch suggestions. These requests
+    are made without your cookies.</li>
+    <li><strong>Spotify</strong> — if you connect Spotify, your search terms and playback commands are
+    sent to the Spotify Web API, authenticated with a token stored locally on your device.</li>
+  </ul>
+  <p>In both cases the data is handled by that third party (Google or Spotify) under their own
+  privacy policies. It is not sent to, or seen by, the developer.</p>
+
+  <h2>Data storage</h2>
+  <p>Your settings, your organisation-usage ranking (used only to order results), cached lookup data,
+  and any Spotify access token are stored locally in your browser via <code>chrome.storage.local</code>.
+  They remain on your device and are removed when you uninstall the extension.</p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>We do not operate a server or receive any of your data.</li>
+    <li>We do not sell or transfer your data to third parties.</li>
+    <li>We do not use your data for advertising, profiling, creditworthiness assessment, or any
+    purpose unrelated to the command bar's single purpose.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be sent to
+  <a href="mailto:rutger@gominimal.ai">rutger@gominimal.ai</a>.</p>
+
+  <footer>Minimal Org Switcher · operated by Minimal AI · <a href="https://gominimal.ai">gominimal.ai</a></footer>
+</main>
+</body>
+</html>

@@ -1,94 +1,276 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Minimal Org Switcher — Privacy Policy</title>
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Privacy policy for the Minimal Org Switcher Chrome extension. Everything runs in your browser. No server, no data collection.">
+<title>Privacy Policy – Minimal Org Switcher</title>
 <style>
-  :root{--ink:#1d2530;--muted:#5b6472;--line:#e6e9ef;--accent:#3a5e9c}
-  *{box-sizing:border-box}
-  body{margin:0;background:#f6f7f9;color:var(--ink);
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased}
-  main{max-width:760px;margin:0 auto;padding:48px 22px 80px}
-  h1{font-size:30px;line-height:1.2;margin:0 0 6px;letter-spacing:-.02em}
-  .updated{color:var(--muted);font-size:14px;margin:0 0 32px}
-  h2{font-size:19px;margin:34px 0 10px;letter-spacing:-.01em}
-  p{margin:0 0 14px}
-  ul{margin:0 0 14px;padding-left:22px}
-  li{margin:6px 0}
-  a{color:var(--accent)}
-  .lead{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 8px}
-  .lead p:last-child{margin-bottom:0}
-  strong{font-weight:650}
-  code{background:#eef1f5;padding:1px 6px;border-radius:5px;font-size:14px}
-  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+:root{
+  --text:#1d1d1f; --body:#3c3c40; --dim:#66666c;
+  --accent:#3059d6; --accent-ink:#2b50c0; --onaccent:#fff;
+  --wash:#f2f4f8;
+  --glass:rgba(255,255,255,.62); --glass-strong:rgba(250,251,252,.72);
+  --ring:rgba(0,0,0,.10); --rim:rgba(255,255,255,.55);
+  --hair:rgba(0,0,0,.10);
+  --tile:rgba(255,255,255,.85); --glyph:rgba(0,0,0,.58);
+  --shadow:0 18px 44px rgba(20,30,60,.10),0 2px 8px rgba(20,30,60,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --text:#f5f5f7; --body:#c9c9ce; --dim:#a1a1a6;
+    --accent:#5b7cf0; --accent-ink:#8ea4ff; --onaccent:#fff;
+    --wash:#121317;
+    --glass:rgba(30,31,36,.62); --glass-strong:rgba(38,40,46,.66);
+    --ring:rgba(255,255,255,.12); --rim:rgba(255,255,255,.09);
+    --hair:rgba(255,255,255,.12);
+    --tile:rgba(255,255,255,.09); --glyph:rgba(255,255,255,.72);
+    --shadow:0 18px 44px rgba(0,0,0,.42),0 2px 8px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--body);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(1100px 700px at 85% -10%, rgba(96,130,220,.14) 0%, transparent 62%),
+    radial-gradient(900px 620px at -12% 18%, rgba(120,150,210,.10) 0%, transparent 56%),
+    radial-gradient(1100px 800px at 50% 112%, rgba(96,130,220,.12) 0%, transparent 60%),
+    var(--wash);
+  background-attachment:fixed;
+}
+::selection{background:rgba(48,89,214,.18)}
+a{color:var(--accent-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.wrap{max-width:688px;margin:0 auto;padding:0 24px}
+header.hero{padding:clamp(64px,10vh,110px) 0 0;text-align:center}
+.eyebrow{margin:0 0 16px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+h1{
+  margin:0 0 18px;color:var(--text);
+  font-size:clamp(38px,7.5vw,54px);line-height:1.06;font-weight:700;letter-spacing:-.018em;text-wrap:balance;
+}
+.lede{margin:0 auto;font-size:clamp(18px,3vw,21px);line-height:1.5;color:var(--dim);text-wrap:pretty;max-width:30em}
+
+/* ---- the product, as hero art ---- */
+.mock{margin:44px auto 0;max-width:560px;text-align:left}
+.bar{
+  display:flex;align-items:center;gap:12px;height:54px;padding:0 20px;border-radius:27px;
+  background:var(--glass-strong);
+  -webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7);
+  box-shadow:inset 0 0 0 1px var(--rim),0 0 0 1px var(--ring),var(--shadow);
+  font-size:19px;color:var(--text);
+}
+.bar svg{width:19px;height:19px;flex:0 0 auto;color:var(--dim)}
+.bar .ghost{color:var(--text);background:color-mix(in srgb,var(--accent) 24%,transparent);border-radius:2px}
+.sheet-mock{
+  margin-top:8px;border-radius:18px;padding:10px;
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(28px) saturate(1.7);backdrop-filter:blur(28px) saturate(1.7);
+  box-shadow:inset 0 0 0 1px var(--rim),0 0 0 1px var(--ring),var(--shadow);
+}
+.tophit{margin:2px 10px 7px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--dim)}
+.hit{
+  display:flex;align-items:center;gap:11px;height:40px;padding:0 11px;border-radius:11px;
+  background:var(--accent);color:var(--onaccent);
+}
+.hit .tile{
+  width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.22);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.hit .tile svg{width:15px;height:15px;color:#fff}
+.hit .lbl{font-size:15px;font-weight:550;letter-spacing:-.005em}
+.hit .chev{margin-left:auto;font-size:15px;opacity:.8}
+
+/* ---- glass sheets ---- */
+main{padding:22px 0 30px}
+.sheet{
+  margin-top:18px;border-radius:22px;padding:clamp(24px,5vw,34px);
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(30px) saturate(1.7);backdrop-filter:blur(30px) saturate(1.7);
+  box-shadow:inset 0 0 0 1px var(--rim),0 0 0 1px var(--ring),var(--shadow);
+}
+.sheet:first-child{margin-top:36px}
+h2{margin:0 0 14px;color:var(--text);font-size:clamp(20px,3.4vw,23px);line-height:1.25;font-weight:700;letter-spacing:-.012em}
+p{margin:0 0 16px;text-wrap:pretty}
+p:last-child{margin-bottom:0}
+.short ul{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+.short li{position:relative;padding-left:23px;color:var(--text);font-size:17px;line-height:1.5;text-wrap:pretty}
+.short li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+.rows{margin-top:6px}
+.row{border-top:1px solid var(--hair);padding:16px 0;display:grid;grid-template-columns:26px 1fr;gap:4px 13px;align-items:start}
+.row:last-child{padding-bottom:2px}
+.row .tile{
+  width:26px;height:26px;border-radius:7px;margin-top:1px;background:var(--tile);
+  box-shadow:0 0 0 1px var(--hair);display:grid;place-items:center;color:var(--glyph);
+}
+.row .tile svg{width:15px;height:15px}
+.row h3{margin:0;font-size:17px;font-weight:650;color:var(--text);letter-spacing:-.005em;align-self:center}
+.row p{grid-column:2;margin:0;font-size:16px;line-height:1.55}
+.tag{
+  display:inline-block;margin-left:8px;padding:2px 8px;border-radius:99px;
+  font-size:12px;font-weight:600;letter-spacing:.02em;vertical-align:2px;
+  color:var(--accent-ink);background:color-mix(in srgb,var(--accent) 13%,transparent);
+}
+ul.plain{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:9px}
+ul.plain li{position:relative;padding-left:23px;text-wrap:pretty}
+ul.plain li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+ul.plain:last-child{margin-bottom:0}
+code{
+  font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:14px;
+  padding:2px 7px;border-radius:6px;color:var(--text);
+  background:color-mix(in srgb,var(--accent) 9%,transparent);
+}
+.contact{margin-top:18px;border-top:1px solid var(--hair);padding-top:20px;display:grid;gap:4px;font-size:16px}
+.contact .who{color:var(--text);font-weight:650}
+footer{padding:44px 0 64px;color:var(--dim);font-size:14px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  header.hero,main,footer{animation:rise .6s cubic-bezier(.25,.8,.3,1) both}
+  main{animation-delay:.08s}
+  footer{animation-delay:.12s}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+@media print{
+  body{background:#fff;font-size:12pt}
+  .sheet,.bar,.sheet-mock{background:#fff;box-shadow:none;border:1px solid #ddd;-webkit-backdrop-filter:none;backdrop-filter:none}
+  a{color:inherit}
+}
 </style>
 </head>
 <body>
-<main>
-  <h1>Minimal Org Switcher — Privacy Policy</h1>
-  <p class="updated">Last updated: 15 August 2026</p>
 
-  <div class="lead">
-    <p><strong>In short:</strong> Minimal Org Switcher runs entirely inside your browser. It has
-    no backend server, and the developer does not collect, receive, store, or sell any of your
-    data. Everything the extension accesses stays on your device, and only leaves your browser
-    when you actively use a feature that requires it (see below).</p>
+
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Minimal Org Switcher</p>
+    <h1>Privacy policy</h1>
+    <p class="lede">The short of it: everything happens in your browser. There is no server, and your data never reaches us.</p>
+    <div class="mock" aria-hidden="true">
+      <div class="bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.2"></circle><path d="M15.3 15.3 20 20"></path></svg>
+        <span>priv<span class="ghost">acy policy</span></span>
+      </div>
+      <div class="sheet-mock">
+        <div class="tophit">Top Hit</div>
+        <div class="hit">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7L19 8v12.5H7z"></path><path d="M14 3.5V8h5"></path></svg></span>
+          <span class="lbl">Privacy policy — this page</span>
+          <span class="chev">›</span>
+        </div>
+      </div>
+    </div>
   </div>
+</header>
 
-  <h2>What the extension is</h2>
-  <p>Minimal Org Switcher is a keyboard-launched command bar that overlays the page you're on,
-  letting you quickly switch between the organisations you manage, jump to their internal pages,
-  search your own history and bookmarks, and — optionally — control Spotify.</p>
+<main>
+  <div class="wrap">
 
-  <h2>Data the extension accesses, and why</h2>
-  <ul>
-    <li><strong>Browsing history &amp; bookmarks</strong> — searched locally so you can jump to a
-    page from the command bar. This is read on your device and is never transmitted anywhere.</li>
-    <li><strong>Open tabs &amp; the active tab</strong> — used to open the organisation or page you
-    select in your browser.</li>
-    <li><strong>Cookies</strong> — your existing session cookies are passed to sites you open inside
-    the extension's in-overlay viewer, so those sites appear logged in exactly as they would in a
-    normal tab. Cookies are read and replayed locally within your own browser; they are never sent
-    to the developer or any third party.</li>
-    <li><strong>Access to all sites</strong> — the command bar can be summoned on any page, and the
-    in-overlay viewer can display any site you choose to open in it.</li>
-    <li><strong>Spotify account (optional)</strong> — only if you choose to connect Spotify. The
-    extension signs you in through Spotify's own OAuth screen and controls playback on your behalf.</li>
-  </ul>
+    <section class="sheet short" aria-labelledby="short">
+      <h2 id="short">The short version</h2>
+      <ul>
+        <li>The extension runs entirely in your browser. There is no backend server.</li>
+        <li>We don't collect, receive, store, or sell any of your data. There is nowhere for it to go.</li>
+        <li>Your history, bookmarks, tabs and cookies are read locally, only to make the bar work.</li>
+        <li>Two features talk to the outside world when you use them: Google search suggestions and Spotify. Those requests go straight from your browser to Google or Spotify, never through us.</li>
+        <li>Uninstall the extension and everything it stored is gone.</li>
+      </ul>
+    </section>
 
-  <h2>When data leaves your browser</h2>
-  <p>Data leaves your device in only two cases, both triggered by you using a specific feature:</p>
-  <ul>
-    <li><strong>Search suggestions</strong> — when the Google suggestion feature is active, the text
-    you type is sent to Google's public autocomplete service to fetch suggestions. These requests
-    are made without your cookies.</li>
-    <li><strong>Spotify</strong> — if you connect Spotify, your search terms and playback commands are
-    sent to the Spotify Web API, authenticated with a token stored locally on your device.</li>
-  </ul>
-  <p>In both cases the data is handled by that third party (Google or Spotify) under their own
-  privacy policies. It is not sent to, or seen by, the developer.</p>
+    <section class="sheet" aria-labelledby="what">
+      <h2 id="what">What the extension does</h2>
+      <p>Minimal Org Switcher is a keyboard-launched command bar. It overlays the page you're on so you can switch between the organisations you manage, jump to their internal pages, search your own history and bookmarks, and control Spotify if you want to. All of it runs as code inside your browser. Nothing else is involved.</p>
+    </section>
 
-  <h2>Data storage</h2>
-  <p>Your settings, your organisation-usage ranking (used only to order results), cached lookup data,
-  and any Spotify access token are stored locally in your browser via <code>chrome.storage.local</code>.
-  They remain on your device and are removed when you uninstall the extension.</p>
+    <section class="sheet" aria-labelledby="reach">
+      <h2 id="reach">What it can reach, and why</h2>
+      <p>Chrome will tell you the extension can access these things. Here is exactly what each one is for.</p>
+      <div class="rows">
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"></circle><path d="M12 7.2v4.8l3.3 2"></path></svg></span>
+          <h3>Browsing history and bookmarks</h3>
+          <p>So you can search them from the bar. They are read locally on your device and never transmitted.</p>
+        </div>
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2.6"></rect><path d="M3.5 9.5h17"></path></svg></span>
+          <h3>Open tabs and the active tab</h3>
+          <p>To open the organisation or page you pick, in the right place.</p>
+        </div>
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"></circle><circle cx="9.4" cy="9.6" r=".6" fill="currentColor"></circle><circle cx="14.6" cy="10.4" r=".6" fill="currentColor"></circle><circle cx="11" cy="14.6" r=".6" fill="currentColor"></circle><circle cx="15.2" cy="15" r=".6" fill="currentColor"></circle></svg></span>
+          <h3>Cookies</h3>
+          <p>When you open a site inside the extension's viewer, your browser passes along your existing session cookies, so the site appears logged in exactly like it would in a normal tab. This happens locally, inside your own browser. Your cookies are never sent to us or to any third party.</p>
+        </div>
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"></circle><path d="M3.8 12h16.4M12 3.8c-4.8 4.9-4.8 11.5 0 16.4M12 3.8c4.8 4.9 4.8 11.5 0 16.4"></path></svg></span>
+          <h3>Access to all sites</h3>
+          <p>The bar can appear on any page, and the viewer can show any site you open in it. Chrome has no narrower permission for that.</p>
+        </div>
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.5V6.2l9.5-2v12.3"></path><circle cx="6.7" cy="18.5" r="2.3"></circle><circle cx="16.2" cy="16.5" r="2.3"></circle></svg></span>
+          <h3>Spotify<span class="tag">optional</span></h3>
+          <p>Only if you connect it. You sign in on Spotify's own page, through their official OAuth flow. We never see your password.</p>
+        </div>
+      </div>
+    </section>
 
-  <h2>What we do not do</h2>
-  <ul>
-    <li>We do not operate a server or receive any of your data.</li>
-    <li>We do not sell or transfer your data to third parties.</li>
-    <li>We do not use your data for advertising, profiling, creditworthiness assessment, or any
-    purpose unrelated to the command bar's single purpose.</li>
-  </ul>
+    <section class="sheet" aria-labelledby="leaves">
+      <h2 id="leaves">When anything leaves your browser</h2>
+      <p>Exactly two features send data anywhere, and only while you use them.</p>
+      <div class="rows">
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.2"></circle><path d="M15.3 15.3 20 20"></path></svg></span>
+          <h3>Search suggestions</h3>
+          <p>The text you type in the bar is sent to Google's public autocomplete service to fetch suggestions. The request is made without your cookies, and it falls under <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</p>
+        </div>
+        <div class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.5V6.2l9.5-2v12.3"></path><circle cx="6.7" cy="18.5" r="2.3"></circle><circle cx="16.2" cy="16.5" r="2.3"></circle></svg></span>
+          <h3>Spotify</h3>
+          <p>If you connected Spotify, your search terms and playback commands go to the Spotify API, authenticated with a token stored on your device. That traffic falls under <a href="https://www.spotify.com/legal/privacy-policy/" rel="noopener">Spotify's privacy policy</a>.</p>
+        </div>
+      </div>
+      <p style="margin-top:16px">In both cases the request goes straight from your browser to Google or Spotify. Nothing passes through us, because there is nothing of ours in the middle.</p>
+    </section>
 
-  <h2>Contact</h2>
-  <p>This extension is operated by Minimal AI. For any question about this policy or your
-  data, reach us via <a href="https://gominimal.ai">gominimal.ai</a>, or through the
-  developer contact details listed on the extension's Chrome Web Store page.</p>
+    <section class="sheet" aria-labelledby="stored">
+      <h2 id="stored">What stays on your device</h2>
+      <p>The extension keeps a small amount of data in Chrome's local storage:</p>
+      <ul class="plain">
+        <li>your settings</li>
+        <li>a ranking of which organisations you use most, only to put the best match on top</li>
+        <li>cached data, so the bar opens fast</li>
+        <li>your Spotify token, if you connected Spotify</li>
+      </ul>
+      <p>All of it lives in <code>chrome.storage.local</code> on your machine. Uninstall the extension and Chrome deletes it.</p>
+    </section>
 
-  <footer>Minimal Org Switcher · operated by Minimal AI · <a href="https://gominimal.ai">gominimal.ai</a></footer>
+    <section class="sheet" aria-labelledby="never">
+      <h2 id="never">What we never do</h2>
+      <ul class="plain">
+        <li>We don't collect or receive your data. We couldn't. There is no server on our side.</li>
+        <li>We don't sell it, share it, or transfer it to anyone.</li>
+        <li>No advertising, no profiling, no tracking.</li>
+        <li>No use of your data to assess creditworthiness or for lending purposes.</li>
+      </ul>
+    </section>
+
+    <section class="sheet" aria-labelledby="questions">
+      <h2 id="questions">Questions</h2>
+      <p>Get in touch and you'll hear back from a human. If the extension ever changes in a way that affects this policy, this page and the date below change with it.</p>
+      <div class="contact">
+        <span class="who">Minimal AI</span>
+        <span>Reach us via <a href="https://gominimal.ai">gominimal.ai</a>, or the developer contact details listed on the extension’s Chrome Web Store page.</span>
+      </div>
+    </section>
+
+  </div>
 </main>
-</body>
-</html>
+
+<footer>Last updated 15 August 2026</footer>
+
+
+
+</body></html>

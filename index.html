@@ -174,15 +174,15 @@ footer{padding:44px 0 64px;color:var(--dim);font-size:14px;text-align:center}
       <ul>
         <li>The extension runs entirely in your browser. There is no backend server.</li>
         <li>We don't collect, receive, store, or sell any of your data. There is nowhere for it to go.</li>
-        <li>Your history, bookmarks, tabs and cookies are read locally, only to make the bar work.</li>
-        <li>Two features talk to the outside world when you use them: Google search suggestions and Spotify. Those requests go straight from your browser to Google or Spotify, never through us.</li>
+        <li>Your history and bookmarks are read locally, only to show them as results in the bar.</li>
+        <li>It only runs on <code>gominimal.ai</code>. Nothing is transmitted to us or to any third party.</li>
         <li>Uninstall the extension and everything it stored is gone.</li>
       </ul>
     </section>
 
     <section class="sheet" aria-labelledby="what">
       <h2 id="what">What the extension does</h2>
-      <p>Minimal Org Switcher is a keyboard-launched command bar. It overlays the page you're on so you can switch between the organisations you manage, jump to their internal pages, search your own history and bookmarks, and control Spotify if you want to. All of it runs as code inside your browser. Nothing else is involved.</p>
+      <p>Minimal Org Switcher is a keyboard-launched command bar for <code>gominimal.ai</code>. It overlays the page you're on so you can switch between the organisations you manage, jump to their internal pages, and search your own browser history and bookmarks to reopen a page fast. All of it runs as code inside your browser. Nothing else is involved.</p>
     </section>
 
     <section class="sheet" aria-labelledby="reach">
@@ -200,39 +200,16 @@ footer{padding:44px 0 64px;color:var(--dim);font-size:14px;text-align:center}
           <p>To open the organisation or page you pick, in the right place.</p>
         </div>
         <div class="row">
-          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"></circle><circle cx="9.4" cy="9.6" r=".6" fill="currentColor"></circle><circle cx="14.6" cy="10.4" r=".6" fill="currentColor"></circle><circle cx="11" cy="14.6" r=".6" fill="currentColor"></circle><circle cx="15.2" cy="15" r=".6" fill="currentColor"></circle></svg></span>
-          <h3>Cookies</h3>
-          <p>When you open a site inside the extension's viewer, your browser passes along your existing session cookies, so the site appears logged in exactly like it would in a normal tab. This happens locally, inside your own browser. Your cookies are never sent to us or to any third party.</p>
-        </div>
-        <div class="row">
           <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"></circle><path d="M3.8 12h16.4M12 3.8c-4.8 4.9-4.8 11.5 0 16.4M12 3.8c4.8 4.9 4.8 11.5 0 16.4"></path></svg></span>
-          <h3>Access to all sites</h3>
-          <p>The bar can appear on any page, and the viewer can show any site you open in it. Chrome has no narrower permission for that.</p>
-        </div>
-        <div class="row">
-          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.5V6.2l9.5-2v12.3"></path><circle cx="6.7" cy="18.5" r="2.3"></circle><circle cx="16.2" cy="16.5" r="2.3"></circle></svg></span>
-          <h3>Spotify<span class="tag">optional</span></h3>
-          <p>Only if you connect it. You sign in on Spotify's own page, through their official OAuth flow. We never see your password.</p>
+          <h3>Access to gominimal.ai</h3>
+          <p>The extension only runs on <code>gominimal.ai</code>. It reads which organisation you're currently in and the list of organisations shown on the admin pages, so the bar can offer them and take you there. This is read locally; nothing leaves your browser.</p>
         </div>
       </div>
     </section>
 
     <section class="sheet" aria-labelledby="leaves">
       <h2 id="leaves">When anything leaves your browser</h2>
-      <p>Exactly two features send data anywhere, and only while you use them.</p>
-      <div class="rows">
-        <div class="row">
-          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.2"></circle><path d="M15.3 15.3 20 20"></path></svg></span>
-          <h3>Search suggestions</h3>
-          <p>The text you type in the bar is sent to Google's public autocomplete service to fetch suggestions. The request is made without your cookies, and it falls under <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</p>
-        </div>
-        <div class="row">
-          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.5V6.2l9.5-2v12.3"></path><circle cx="6.7" cy="18.5" r="2.3"></circle><circle cx="16.2" cy="16.5" r="2.3"></circle></svg></span>
-          <h3>Spotify</h3>
-          <p>If you connected Spotify, your search terms and playback commands go to the Spotify API, authenticated with a token stored on your device. That traffic falls under <a href="https://www.spotify.com/legal/privacy-policy/" rel="noopener">Spotify's privacy policy</a>.</p>
-        </div>
-      </div>
-      <p style="margin-top:16px">In both cases the request goes straight from your browser to Google or Spotify. Nothing passes through us, because there is nothing of ours in the middle.</p>
+      <p>Nothing does. The extension makes no network requests to us or to any third party. Everything — reading your history and bookmarks, reading the organisation you're in, ranking and searching — happens locally inside your browser. The only network activity is your browser navigating to the <code>gominimal.ai</code> page you chose, exactly as if you had typed the address yourself.</p>
     </section>
 
     <section class="sheet" aria-labelledby="stored">
@@ -240,9 +217,8 @@ footer{padding:44px 0 64px;color:var(--dim);font-size:14px;text-align:center}
       <p>The extension keeps a small amount of data in Chrome's local storage:</p>
       <ul class="plain">
         <li>your settings</li>
-        <li>a ranking of which organisations you use most, only to put the best match on top</li>
+        <li>the list of organisations, and a ranking of which you use most, only to put the best match on top</li>
         <li>cached data, so the bar opens fast</li>
-        <li>your Spotify token, if you connected Spotify</li>
       </ul>
       <p>All of it lives in <code>chrome.storage.local</code> on your machine. Uninstall the extension and Chrome deletes it.</p>
     </section>
@@ -260,7 +236,7 @@ footer{padding:44px 0 64px;color:var(--dim);font-size:14px;text-align:center}
   </div>
 </main>
 
-<footer>Last updated 15 August 2026</footer>
+<footer>Last updated 7 September 2026</footer>
 
 
 
